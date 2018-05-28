@@ -3,19 +3,19 @@
 :root {
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
-  --pecan-bg: #28272a;
+  /* Original color for bg, bg left2, bg center, bg right2, FG left and FG right was #28272a */
+  --pecan-bg: #1c1c1b;
   --pecan-bg-left: #1D6E8F;
-  --pecan-bg-left2: #28272a;
-  --pecan-bg-center: #28272a;
-  --pecan-bg-right2: #28272a;
+  --pecan-bg-left2: #1c1c1b;
+  --pecan-bg-center: #1c1c1b;
+  --pecan-bg-right2: #1c1c1b;
   --pecan-bg-right: #FD95A9;
   /* Choose foreground colors */
-  /*--pecan-fg-left: #28272a;*/
   --pecan-fg-left: #FFFFFF;
   --pecan-fg-left2: #1D6E8F;
   --pecan-fg-center: #e1d6c9;
   --pecan-fg-right2: #FD95A9;
-  --pecan-fg-right: #28272a;
+  --pecan-fg-right: #1c1c1b;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
   /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
