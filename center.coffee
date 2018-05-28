@@ -1,4 +1,4 @@
-command: "date +\"%a, %b %d\""
+command: "bash Pecan/scripts/time"
 
 refreshFrequency: 100000
 

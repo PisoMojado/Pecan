@@ -4,9 +4,11 @@ exists () {
     type "$1" &> /dev/null ;
 }
 
-if exists /usr/local/bin/chunkc ; then
-     /usr/local/bin/chunkc tiling::query --desktop id
+CUR_DESKTOP=
+if exists /opt/local/bin/chunkc ; then
+    CUR_DESKTOP=$(/opt/local/bin/chunkc tiling::query --desktop id)
 else
-   	echo "⏻"
+    CUR_DESKTOP="♖"
 fi
+echo "${CUR_DESKTOP}"
 

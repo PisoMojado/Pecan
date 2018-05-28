@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+DAY=$(date +%A)
+MONTH=$(date +%B)
+DOM=$(date +%d)
+YEAR=$(date +%Y)
+
+echo "${DAY} ♖ ${MONTH} ♖ ${DOM} ♖ ${YEAR}"

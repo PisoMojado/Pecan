@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+CPU=$(uptime | cut -d " " -f 10)
+MEM=$(vm_stat | perl -ne '/page size of (\d+)/ and $size=$1; /Pages\s+([^:]+)[^\d]+(\d+)/ and printf("%-16s % 16.2f Mi\n", "$1:", $2 * $size / 1048576);' | head -2 | tail -1 | awk '{printf "%.0f", $2}')
+echo "${CPU} cores ♖ ${MEM} MiB"

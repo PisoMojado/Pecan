@@ -3,7 +3,7 @@
 # Script to import and export Pecan styles
 # Author: Daniel Neemann
 
-uber="/Users/zzzeyez/scripts/uber/"
+uber="/Users/michael/Library/Application Support/Übersicht/widgets/"
 name="$2"
 directory="${PWD##*/}"
 themes="./themes/$name"
@@ -52,11 +52,7 @@ notify(){
 }
 
 refresh(){
-osascript <<EOD
-  tell application "Übersicht"
-  	refresh widget id "Pecan-background-coffee"
-  end tell
-EOD
+osascript -e 'tell application "Übersicht" to refresh widget id "Pecan-background-coffee"'
 }
 
 help(){
