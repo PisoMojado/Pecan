@@ -5,7 +5,7 @@ exists () {
 }
 
 if exists /opt/local/bin/ifstat ; then
-	echo "↓ $(bash $(dirname "$0")/down) ↑ $(bash $(dirname "$0")/up)"
+	echo "↓ $(bash $(dirname "$0")/down) KB/s ↑ $(bash $(dirname "$0")/up) KB/s"
 else
 	echo "↓ $(networksetup -getairportnetwork en0 | cut -c 24-)"
 fi

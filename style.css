@@ -49,8 +49,8 @@
   --pecan-alignment-bottom: 0;
   /* Mono font recommended (alignment depends on character width) */
   --pecan-font: SF Mono, Menlo;
-  --pecan-font-size: 11px;
-  --pecan-large-font-size: 11px;
+  --pecan-font-size: 12px;
+  --pecan-large-font-size: 12px;
   --pecan-font-style: none;
   /* Xanthia */
   /* If Xanthia is not installed then these values will be ignored */

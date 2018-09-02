@@ -5,4 +5,4 @@ MONTH=$(date +%B)
 DOM=$(date +%d)
 YEAR=$(date +%Y)
 
-echo "${DAY} ♖ ${MONTH} ♖ ${DOM} ♖ ${YEAR}"
+echo "${DAY} ♦ ${MONTH} ♦ ${DOM} ♦ ${YEAR}"

@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
-CPU=$(uptime | cut -d " " -f 10)
-MEM=$(vm_stat | perl -ne '/page size of (\d+)/ and $size=$1; /Pages\s+([^:]+)[^\d]+(\d+)/ and printf("%-16s % 16.2f Mi\n", "$1:", $2 * $size / 1048576);' | head -2 | tail -1 | awk '{printf "%.0f", $2}')
-echo "${CPU} cores ♖ ${MEM} MiB"
+CPU=$(uptime | cut -d " " -f 11)
+PAGE_SIZE=$(vm_stat | head -1 | cut -d " " -f 8)
+MEM_SIZE=$(sysctl -a | grep hw.memsize | cut -d " " -f 2)
+FREE=$(vm_stat | head -2 | tail -1 | tr "." " " | sed -E 's/( )+/,/g' | cut -d "," -f 3)
+INACTIVE=$(vm_stat | head -4 | tail -1 | tr "." " " | sed -E 's/( )+/,/g' | cut -d "," -f 3)
+SPECULATIVE=$(vm_stat | head -5 | tail -1 | tr "." " " | sed -E 's/( )+/,/g' | cut -d "," -f 3)
+PURGEABLE=$(vm_stat | head -8 | tail -1 | tr "." " " | sed -E 's/( )+/,/g' | cut -d "," -f 3)
+MEM=$(echo $MEM_SIZE $FREE $INACTIVE $SPECULATIVE $PURGEABLE $PAGE_SIZE | awk '{printf "%.0f" , ($1 - ($2 * $6 + $3 * $6 + $4 * $6 + $5 * $6)) / 1024 / 1024}')
+echo "${CPU} cores ♦ ${MEM} MiB"
